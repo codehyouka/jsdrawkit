@@ -1,0 +1,91 @@
+
+<!doctype html>
+
+
+<script src="../../dist/compt.js"></script>
+<script src="../../dist/jsdrawkit_canvas.js"></script>
+<body class="dcw">
+<h1>Hello world</h1>
+
+<div id="div_canvas">
+    
+ 
+</div>
+
+<canvas id="main_canvas">
+    
+ 
+</canvas>
+     </body>
+<script type="text/javascript">
+drawkit_canvas.module.tests = function(){
+    console.log(this.cls_main);
+    alert("ds");
+}
+ct("ready",function(){
+
+var canva =new drawkit_canvas("#main_canvas",{width:500,height:700})
+canva.tests();
+
+arcs = canva.layerNew();
+rects = canva.layerNew();
+line = canva.layerNew();
+line.addLayerMoveTo(15+"+{coordX}",25+"+{coordY}");
+line.addLayerLineTo(25+"+{coordX}",35+"+{coordY}");
+line.addLayerLineTo(10+"+{coordX}",10+"+{coordY}");
+line.addLayerIsFill(true);
+line.addLayerInCoords(20,10);
+arcs.addLayerFillRect(25+"+{coordX}",25+"+{coordY}",100,100);
+arcs.addLayerClearRect(45+"+{coordX}",45+"+{coordY}",60,60);
+arcs.addLayerStrokeRect(50+"+{coordX}",50+"+{coordY}",50,50);
+rects.addLayerFillRect(100,100,100,100);
+arcs.addLayerInCoords(20,10);
+//rects.addRect(20,10);
+ arcs.addLayerInCoords(75,75);
+//arcs.addRect(20,10);
+   line.addLayerInCoords(50,50);
+
+ arcs.addLayerInCoords(175,175);
+//arcs.addRect(20,10);
+   line.addLayerInCoords(150,150);
+
+canva.onMouseDown(function(e){
+   // alert("ADS");
+  
+   arcs.changeLayerInCoords(e.layerX+55,e.layerY+55);
+//arcs.addRect(20,10);
+   line.changeLayerInCoords(e.layerX+150,e.layerY+150);
+});
+var key_x = 20;
+var key_y = 20;
+document.onkeydown=function(e){
+  var key_bool = true;
+    if(e.key == "ArrowDown"){
+        key_y-=10;
+        key_bool = false;
+    }
+        
+    if(e.key == "ArrowUp"){
+        key_y+=10
+        key_bool = false;
+    }
+        
+    if(e.key == "ArrowRight"){
+         key_x+=10;
+         key_bool = false;
+    }
+       
+    if(e.key == "ArrowLeft"){
+         key_x-=10;
+         key_bool = false;
+    }   
+       
+
+arcs.addLayerInCoords(key_x,key_y);
+//e.defaultPrevented();
+
+return key_bool;
+}
+
+});
+</script>

@@ -1,0 +1,29 @@
+{
+  "name": "jsdrawkit",
+  "version": "1.0.0",
+  "description": "JS library helps your draw your idea either in canvas or svg",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codehyouka/jsdrawkit.git"
+  },
+  "keywords": [
+    "canvas",
+    "and",
+    "svg"
+  ],
+  "author": "Codehyouka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codehyouka/jsdrawkit/issues"
+  },
+  "homepage": "https://github.com/codehyouka/jsdrawkit#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^3.0.1"
+  }
+}

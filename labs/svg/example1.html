@@ -1,0 +1,52 @@
+
+<!doctype html>
+
+
+<script src="../../dist/compt.js"></script>
+<script src="../../dist/jsdrawkit_svg.js"></script>
+<body class="dcw">
+<h1>Hello world</h1>
+
+<div id="div_canvas">
+    
+ 
+</div>
+
+<svg id="main_canvas">
+    
+ 
+</svg>
+     </body>
+<script type="text/javascript">
+drawkit_svg.module.tests = function(){
+    console.log(this.cls_main);
+    alert("ds");
+}
+ct("ready",function(){
+    console.log("--");
+var canva =new drawkit_svg("#div_canvas",{width:500,height:700})
+
+    test1 = canva.layerNew();
+ /// test1.addLayerRectangle({width:300,height:"100" ,"style":"'fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)'"})
+   test1.addLayerRectangle("300",100 ).setStyle({"fill":"rgb(0,0,255)","stroke-width":3,"stroke":"rgb(0,0,0)"});
+   
+   
+    //test1.addLayerCircle({cx:"50",cy:"50",r:"40",stroke:"'black'","stroke-width":"3",fill:"'red'"})
+    test1.addLayerCircle("50","50","40");//.setFill("red");
+    //stroke:"'black'","stroke-width":"3",fill:"'red'"
+    test1.addLayerInCoords(100,100);
+
+
+
+     test2 = canva.layerNew();
+ //    test2.addLayerRectangle({width:300,height:"100" ,"style":"'fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)'"})
+ //?   test2.addLayerCircle({cx:"50",cy:"50",r:"40",stroke:"'black'","stroke-width":"3",fill:"'yellow'"})
+ //?   test2.addLayerEllipse({cx:"60",cy:"60",rx:"40",ry:"70",stroke:"'black'","stroke-width":"3",fill:"'pink'"})
+    test2.addLayerText("test",140,170)
+    test2.addLayerEllipse(60,60,40,70)//.setStyle("'fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)'")
+    test2.addLayerLine(160,160,140,70).setStyle({"fill":"rgb(0,0,255)","stroke-width":3,"stroke":"rgb(0,0,0)"})
+    test2.addLayerPolyline(["200","10 250","190 160","210"])
+    test2.addLayerInCoords(112,452);
+    
+});
+</script>
