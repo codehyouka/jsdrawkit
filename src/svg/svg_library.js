@@ -94,7 +94,8 @@ function addLayerText(setting,layer,text,x,y){
        this.layer[this.main_uniq]['value']['fill']=supporting_library.data_svg_method(strs);
    } 
 } 
-//==
+
+
 
 function layerMain(setting,get_uniq,json_val){
 this.setting = setting;
@@ -174,12 +175,14 @@ var add_layer = [];
      //   json_val["layer"].push({"action":"path","value":config_res });
      return new addLayerPath(this.setting,json_val["layer"],config)  
      }
-    this.addLayerText = function(text,x,y){
-        //text
+     
+     this.addLayerText = function(text,x,y){
+        // <path>
      //    var config_res = config||{};
-     //   json_val["layer"].push({"action":"text","value":config_res });
-      return new addLayerText(this.setting,json_val["layer"],"'"+text+"'",x,y)  
-    }
+     //   json_val["layer"].push({"action":"path","value":config_res });
+     return new addLayerText(this.setting,json_val["layer"],text,x,y)  
+     } 
+
 
     
     this.updateMove = function(index,coordX,coordY){

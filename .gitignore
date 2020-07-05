@@ -1,3 +1,4 @@
 node_modules/
 src/svg_backup
-dist/*.js
+dist/
+dist_exp/

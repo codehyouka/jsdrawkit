@@ -19,7 +19,9 @@
     drawkit_svg.prototype.is_active = function(bool){
          this.cls_main.is_active(bool);
     }
- 
+    drawkit_svg.prototype.newElementLayer = function(dom){
+        return new newElementLayerCore(this,dom);
+    }        
 
      drawkit_svg.prototype.layerNew = function(conf){
        var get_uniq = _ct.getUniq();
