@@ -7,4 +7,4 @@ You need to install this in your machine
 ```bash
 npm install grasseum -g
 ```
-You also need this  JS library [compt](https://github.com/codehyouka/compt), follow the procedure indicated.
+You also need this  JS library [compt js](https://github.com/compts/compts), follow the procedure indicated.
