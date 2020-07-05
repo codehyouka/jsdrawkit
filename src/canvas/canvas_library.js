@@ -220,5 +220,11 @@ function layerMain(setting,get_uniq,json_val){
         this.setting.generate();
 
     }
+    this.getCoordX = function(){
+        return this.posX;
+    }
+    this.getCoordY = function(){
+        return this.posY;
+    }
 
 }

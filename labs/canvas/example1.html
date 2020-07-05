@@ -30,14 +30,14 @@ canva.tests();
 arcs = canva.layerNew();
 rects = canva.layerNew();
 line = canva.layerNew();
-line.addLayerMoveTo(15+"+{coordX}",25+"+{coordY}");
-line.addLayerLineTo(25+"+{coordX}",35+"+{coordY}");
-line.addLayerLineTo(10+"+{coordX}",10+"+{coordY}");
+line.addLayerMoveTo("15+{coordX}","25+{coordY}");
+line.addLayerLineTo("25+{coordX}","35+{coordY}");
+line.addLayerLineTo("10+{coordX}","10+{coordY}");
 line.addLayerIsFill(true);
 line.addLayerInCoords(20,10);
-arcs.addLayerFillRect(25+"+{coordX}",25+"+{coordY}",100,100);
-arcs.addLayerClearRect(45+"+{coordX}",45+"+{coordY}",60,60);
-arcs.addLayerStrokeRect(50+"+{coordX}",50+"+{coordY}",50,50);
+arcs.addLayerFillRect("25+{coordX}","25+{coordY}",100,100);
+arcs.addLayerClearRect("45+{coordX}","45+{coordY}",60,60);
+arcs.addLayerStrokeRect("50+{coordX}","50+{coordY}",50,50);
 rects.addLayerFillRect(100,100,100,100);
 arcs.addLayerInCoords(20,10);
 //rects.addRect(20,10);
@@ -56,17 +56,17 @@ canva.onMouseDown(function(e){
 //arcs.addRect(20,10);
    line.changeLayerInCoords(e.layerX+150,e.layerY+150);
 });
-var key_x = 20;
-var key_y = 20;
+var key_x = line.getCoordX();
+var key_y = line.getCoordY();
 document.onkeydown=function(e){
   var key_bool = true;
     if(e.key == "ArrowDown"){
-        key_y-=10;
+        key_y+=10;
         key_bool = false;
     }
         
     if(e.key == "ArrowUp"){
-        key_y+=10
+        key_y-=10
         key_bool = false;
     }
         
@@ -81,7 +81,8 @@ document.onkeydown=function(e){
     }   
        
 
-arcs.addLayerInCoords(key_x,key_y);
+//arcs.addLayerInCoords(key_x,key_y);
+line.changeLayerInCoords(key_x,key_y);
 //e.defaultPrevented();
 
 return key_bool;
