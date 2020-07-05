@@ -215,6 +215,8 @@ function layerMain(setting,get_uniq,json_val){
         
         //console.log(this.posX,this.posY,this.posX/this.posY,"pos2");
         var val_ary = supporting_library.changeActionBaseArgument(json_val["action"],json_val["layer"],{coordX:(coordX-this.posX),coordY:(coordY-this.posY)});
+       // var val_ary = supporting_library.changeActionBaseArgument(json_val["action"],json_val["layer"],{coordX:(coordX),coordY:(coordY)});
+       
         this.posX=coordX//-this.posX;
         this.posY=coordY//-this.posY;
         this.setting.generate();

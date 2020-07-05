@@ -141,12 +141,16 @@ svg_init.prototype.generate = function(){
 }
  svg_init.prototype.updateCoords = function(get_uniq,coordX,coordY){
      var list_ar = [];
-    ct("dom","svg[layer_inq = "+get_uniq+" ]").each(function(i,k){
-        var attr = ct("dom",i).attr(["ind",'x','y']);
-        if(_ct.indexOf(list_ar,attr['ind'])==-1){
-            ct("dom",i).attr({"x":parseInt(coordX)+parseInt(attr['x']),"y":parseInt(attr['y'])+parseInt(coordY)});
-        }
-        list_ar.push(attr['ind'])
-    });
+     ct("dom","svg[layer_inq = "+get_uniq+" ]").attr({
+        "x":parseInt(coordX),
+        "y":parseInt(coordY)
+     })
+   // ct("dom","svg[layer_inq = "+get_uniq+" ]").each(function(i,k){
+    //    var attr = ct("dom",i).attr(["ind",'x','y']);
+    //    if(_ct.indexOf(list_ar,attr['ind'])==-1){
+    //        ct("dom",i).attr({"x":parseInt(coordX)+parseInt(attr['x']),"y":parseInt(attr['y'])+parseInt(coordY)});
+    //    }
+    //    list_ar.push(attr['ind'])
+    //});
  
 }

@@ -30,14 +30,24 @@ canva.tests();
 arcs = canva.layerNew();
 rects = canva.layerNew();
 line = canva.layerNew();
-line.addLayerMoveTo("15+{coordX}","25+{coordY}");
-line.addLayerLineTo("25+{coordX}","35+{coordY}");
-line.addLayerLineTo("10+{coordX}","10+{coordY}");
+//?line.addLayerMoveTo("15+{coordX}","25+{coordY}");
+//?line.addLayerLineTo("25+{coordX}","35+{coordY}");
+//?line.addLayerLineTo("10+{coordX}","10+{coordY}");
+
+line.addLayerMoveTo(15,25);
+line.addLayerLineTo(25,35);
+line.addLayerLineTo(10,10);
+
 line.addLayerIsFill(true);
 line.addLayerInCoords(20,10);
-arcs.addLayerFillRect("25+{coordX}","25+{coordY}",100,100);
-arcs.addLayerClearRect("45+{coordX}","45+{coordY}",60,60);
-arcs.addLayerStrokeRect("50+{coordX}","50+{coordY}",50,50);
+//?arcs.addLayerFillRect("25+{coordX}","25+{coordY}",100,100);
+//?arcs.addLayerClearRect("45+{coordX}","45+{coordY}",60,60);
+//?arcs.addLayerStrokeRect("50+{coordX}","50+{coordY}",50,50);
+
+arcs.addLayerFillRect(25,25,100,100);
+arcs.addLayerClearRect(45,45,60,60);
+arcs.addLayerStrokeRect(50,50,50,50);
+
 rects.addLayerFillRect(100,100,100,100);
 arcs.addLayerInCoords(20,10);
 //rects.addRect(20,10);
@@ -50,15 +60,16 @@ arcs.addLayerInCoords(20,10);
    line.addLayerInCoords(150,150);
 
 canva.onMouseDown(function(e){
-   // alert("ADS");
+   
   
-   arcs.changeLayerInCoords(e.layerX+55,e.layerY+55);
+   arcs.changeLayerInCoords(e.layerX+55 ,e.layerY+55 );
 //arcs.addRect(20,10);
-   line.changeLayerInCoords(e.layerX+150,e.layerY+150);
+   line.changeLayerInCoords(e.layerX+150 ,e.layerY+150 );
 });
-var key_x = line.getCoordX();
-var key_y = line.getCoordY();
+
 document.onkeydown=function(e){
+    var key_x = line.getCoordX();
+var key_y = line.getCoordY();
   var key_bool = true;
     if(e.key == "ArrowDown"){
         key_y+=10;
