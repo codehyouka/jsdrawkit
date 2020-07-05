@@ -357,6 +357,12 @@ function layerMain(setting,get_uniq,json_val){
     }
 
 }
+ var dcw_module = {
+        tests:function(){
+            console.log(this.dom);
+            alert("tests");
+        }
+    };
 
 function canvas_init(value,main_uniq,reference_value){
     var main_value =  value;
@@ -537,12 +543,6 @@ canvas_init.prototype.generate = function(){
      
     }
 }
- var dcw_module = {
-        tests:function(){
-            console.log(this.dom);
-            alert("tests");
-        }
-    };
 
     drawkit_cnv=function(dom,setting){
         if(_ct.has(dom) == false)

@@ -1,3 +1,7 @@
+function LayerElement(setting,layer,element){
+    this.main_uniq = _ct.getUniq();
+    this.layer=layer;
+}
 function addLayerRectangle(setting,layer,width,height){
     this.main_uniq = _ct.getUniq();
     this.layer=layer;
@@ -129,7 +133,10 @@ var add_layer = [];
  
  
 
+    this.LayerElement = function(element){
 
+        return new LayerElement(this.setting,json_val["layer"],element);
+    }
     this.addLayerRectangle = function(width,height){
         
         // <rect>
